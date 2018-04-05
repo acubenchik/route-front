@@ -1,0 +1,14 @@
+/**
+ * Global Application Styles
+ */
+
+@import "constants";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../src/app/login/login.css";
+
+body {
+	background-color: $primary-bg;
+	color: #ffffff;
+	font-family: $primary-font;
+	font-size: $primary-font-size;
+}
