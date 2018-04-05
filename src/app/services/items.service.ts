@@ -6,7 +6,7 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class ItemsService {
 
-    private url = "http://localhost:8030/get/all";
+    private url = "http://localhost:8030/route/get/all";
 
     constructor(private http: Http) {
 

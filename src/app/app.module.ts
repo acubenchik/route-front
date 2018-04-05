@@ -15,6 +15,7 @@ import {SecondService} from "./route/second.service";
 import {LoginComponent} from "./login/login.component";
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth.guard";
+import {CheckoutComponent} from "./checkout/checkout.component";
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import {AuthGuard} from "./services/auth.guard";
         ItemsComponent,
         ItemsDetailsComponent,
         LoginComponent,
-        HomeComponent
+        HomeComponent,
+        CheckoutComponent
     ],
     providers: [
         {provide: ItemsService, useClass: ItemsService},
