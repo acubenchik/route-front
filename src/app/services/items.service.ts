@@ -26,8 +26,8 @@ export class ItemsService {
 
     items : Item[];
 
-    public getItem(id: number) {
-        let result = {};
+    public getItem(id: number): Item {
+        let result : Item;
         this.items.forEach(item => {
             if (item.uid === id) {
                 result = item;

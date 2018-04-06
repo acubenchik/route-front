@@ -20,8 +20,16 @@ describe('AuthGuard', () => {
 
     });
 
-    it('should create an instance', () => {
-        expect(service).toBeDefined();
+    it('should return true if user is preset in localStorage', () => {
+        localStorage.setItem("currentUser", "not null");
+        let result: boolean = service.canActivate(null, null);
+        expect(result).toBeTruthy();
+    });
+
+    it('should return false if user is not present in localStorage', () => {
+        localStorage.setItem("currentUser", null);
+        let result: boolean = service.canActivate(null, null);
+        expect(result).toBeFalsy();
     });
 
 });

@@ -4,6 +4,7 @@ import {Headers, Http, RequestOptions} from "@angular/http";
 import {ItemsService} from "../services/items.service";
 
 import 'rxjs/add/operator/switchMap';
+import {Item} from "../model/Item";
 
 @Component({
     selector: "items-details",
@@ -11,7 +12,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ItemsDetailsComponent implements OnInit {
 
-    @Input() item: any;
+    @Input() item: Item;
 
     public constructor(private route: ActivatedRoute,
                        private router: Router,
@@ -30,7 +31,6 @@ export class ItemsDetailsComponent implements OnInit {
         });
         let options: RequestOptions = new RequestOptions({headers: headers});
 
-        console.log(options)
         this.http.post("http://localhost:8030/route/checkout", {id: this.route.snapshot.paramMap.get('id')}, options)
             .subscribe(answer => {
                 }, error2 => {
