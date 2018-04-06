@@ -12,8 +12,7 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                use: [ 'istanbul-instrumenter-loader', 'awesome-typescript-loader?configFileName=config/tsconfig.json', 'angular2-template-loader' ],
-                exclude: /\.spec\.ts$/
+                use: ['awesome-typescript-loader?configFileName=config/tsconfig.json', 'angular2-template-loader' ]
             },
             {
                 test: /\.html$/,
