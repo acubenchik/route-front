@@ -10,7 +10,7 @@ import {HomeComponent} from './home/home.component';
 
 import '../global.scss'
 import {ItemsDetailsComponent} from "./details/items-details.component";
-import {ItemsService} from "./services/items.service";
+import {RouteService} from "./services/route.service";
 import {SecondService} from "./route/second.service";
 import {LoginComponent} from "./login/login.component";
 import {AuthenticationService} from "./services/authentication.service";
@@ -32,7 +32,7 @@ import {CheckoutComponent} from "./checkout/checkout.component";
         CheckoutComponent
     ],
     providers: [
-        {provide: ItemsService, useClass: ItemsService},
+        {provide: RouteService, useClass: RouteService},
         AuthenticationService,
         AuthGuard
     ],

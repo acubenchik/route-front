@@ -1,39 +1,38 @@
-import {Injectable} from "@angular/core";
-import {Http, RequestOptions, Headers} from "@angular/http";
+import {Inject, Injectable} from "@angular/core";
+import {Headers, Http, RequestOptions} from "@angular/http";
 import {Item} from "../model/Item";
 import {Observable} from "rxjs/Observable";
+import {AppSettings} from "../common/config"
 
 @Injectable()
-export class ItemsService {
+export class RouteService {
 
-    private url = "http://localhost:8030/route/get/all";
+    private items: Item[];
 
-    constructor(private http: Http) {
-
+    constructor(private http: Http, @Inject(AppSettings.ROUTES_URL) private apiUrl: string) {
     }
 
-    public loadItems(): Observable<Item[]> {
+    public loadRoutes(): Observable<Item[]> {
         let headers: Headers = new Headers({
             'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('currentUser')).token
         });
         let options: RequestOptions = new RequestOptions({headers: headers});
-        return this.http.get(this.url, options).map(res => {
+        return this.http.get(this.apiUrl, options).map(res => {
             this.items = res.json()._embedded.routes;
             return this.items;
         }).catch(
-            (error:any) => Observable.throw(error.json().error || 'Server error'));
-    }
+            (error) => Observable.throw('Server error')
+        );
+    };
 
-    items : Item[];
-
-    public getItem(id: number): Item {
-        let result : Item;
+    public getRoute(id: number): Item {
+        let result: Item;
         this.items.forEach(item => {
             if (item.uid === id) {
                 result = item;
             }
         });
         return result;
-    }
+    };
 
 }

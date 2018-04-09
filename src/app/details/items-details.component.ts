@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {ActivatedRoute, Router} from '@angular/router'
 import {Headers, Http, RequestOptions} from "@angular/http";
-import {ItemsService} from "../services/items.service";
+import {RouteService} from "../services/route.service";
 
 import 'rxjs/add/operator/switchMap';
 import {Item} from "../model/Item";
@@ -16,13 +16,13 @@ export class ItemsDetailsComponent implements OnInit {
 
     public constructor(private route: ActivatedRoute,
                        private router: Router,
-                       private service: ItemsService,
+                       private service: RouteService,
                        private http: Http) {
     }
 
     public ngOnInit(): void {
         let id = +this.route.snapshot.paramMap.get('id');
-        this.item = this.service.getItem(id);
+        this.item = this.service.getRoute(id);
     }
 
     public checkout(): void {
