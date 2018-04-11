@@ -1,6 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {RouteService} from "../services/route.service";
-import {Item} from "../model/Item";
+import {Order} from "../model/Order";
 
 @Component({
     selector: "items",
@@ -8,10 +7,17 @@ import {Item} from "../model/Item";
 })
 export class CheckoutComponent implements OnInit {
 
+    private order: Order;
+    emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
     public constructor() {
     }
 
     public ngOnInit(): void {
+        this.order = new Order();
+    }
+
+    onSubmit() {
+        console.log(this.order);
     }
 }

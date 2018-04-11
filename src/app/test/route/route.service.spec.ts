@@ -1,6 +1,5 @@
 import {RouteService} from "../../services/route.service";
 import {inject, TestBed} from "@angular/core/testing";
-import {AppSettings} from "../../common/config";
 import {HttpModule, Response, ResponseOptions, XHRBackend} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
 
@@ -13,7 +12,6 @@ describe('RouteService', () => {
             ,
             providers: [
                 RouteService,
-                {provide: AppSettings.ROUTES_URL, useValue: "http://example.com"},
                 {provide: XHRBackend, useClass: MockBackend}
             ]
         });
@@ -56,7 +54,7 @@ describe('RouteService', () => {
             service.loadRoutes().subscribe((res: any) => {
                 },
                 (error) => {
-                expect(error).toEqual("Server error");
+                    expect(error).toEqual("Server error");
                 },
             );
         }));

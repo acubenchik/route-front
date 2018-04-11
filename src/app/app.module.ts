@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {ItemsComponent} from './item/items.component';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {APP_ROUTING} from './app.routing';
@@ -16,11 +16,14 @@ import {LoginComponent} from "./login/login.component";
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth.guard";
 import {CheckoutComponent} from "./checkout/checkout.component";
+import {APP_CONFIG, AppConfig} from "./common/config";
+import {NameValidator} from "./directives/name.validator";
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         APP_ROUTING
     ],
@@ -29,12 +32,14 @@ import {CheckoutComponent} from "./checkout/checkout.component";
         ItemsDetailsComponent,
         LoginComponent,
         HomeComponent,
-        CheckoutComponent
+        CheckoutComponent,
+        NameValidator
     ],
     providers: [
-        {provide: RouteService, useClass: RouteService},
+        RouteService,
         AuthenticationService,
-        AuthGuard
+        AuthGuard,
+        { provide: APP_CONFIG, useValue: AppConfig }
     ],
     bootstrap: [
         HomeComponent

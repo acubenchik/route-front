@@ -21,7 +21,7 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                use: [ 'awesome-typescript-loader?configFileName=config/tsconfig.json', 'angular2-template-loader' ]
+                use: ['awesome-typescript-loader?configFileName=config/tsconfig.json', 'angular2-template-loader']
             },
             {
                 test: /\.html$/,
@@ -33,8 +33,8 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: [ /node_modules/, helpers.root('src', 'global.scss') ],
-                use: [ 'to-string-loader', 'css-loader', 'sass-loader' ]
+                exclude: [/node_modules/, helpers.root('src', 'global.scss')],
+                use: ['to-string-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /global\.scss$/,
@@ -51,8 +51,12 @@ module.exports = {
 
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: [ 'app', 'vendor', 'polyfills' ]
+            name: ['app', 'vendor', 'polyfills']
         }),
+
+        //Webpack generates a number of js and CSS files.
+        //You could insert them into the index.html manually. That would be tedious and error-prone.
+        //Webpack can inject those scripts and links for you with the HtmlWebpackPlugin.
 
         new HtmlWebpackPlugin({
             template: 'src/index.html'
