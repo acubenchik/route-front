@@ -9,5 +9,5 @@ export interface IAppConfig {
 
 export const AppConfig: IAppConfig = {
     apiEndpoint: "http://localhost:8030/route/get/all",
-    imageEndpoint: "http://localhost:8030/route/get/image"
+    imageEndpoint: "http://localhost:8030/image/get"
 };

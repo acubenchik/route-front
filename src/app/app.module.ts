@@ -18,6 +18,7 @@ import {AuthGuard} from "./services/auth.guard";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {APP_CONFIG, AppConfig} from "./common/config";
 import {NameValidator} from "./directives/name.validator";
+import {ImageService} from "./services/image.service";
 
 @NgModule({
     imports: [
@@ -39,6 +40,7 @@ import {NameValidator} from "./directives/name.validator";
         RouteService,
         AuthenticationService,
         AuthGuard,
+        ImageService,
         { provide: APP_CONFIG, useValue: AppConfig }
     ],
     bootstrap: [

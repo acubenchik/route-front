@@ -9,8 +9,6 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class RouteService {
 
     private items: Item[];
-    private readonly imageType: string = 'data:image/PNG;base64,';
-
 
     constructor(private http: Http, private sanitizer: DomSanitizer, @Inject(APP_CONFIG) private config: IAppConfig) {
     }
@@ -27,20 +25,6 @@ export class RouteService {
             (error) => Observable.throw('Server error')
         );
     };
-
-    public loadImages(items: Item[]): void {
-        console.log(items);
-        items.forEach(item => {
-            console.log(this.config.imageEndpoint + "/" + item.uid);
-            this.http.get(this.config.imageEndpoint + "/" + item.uid)
-                .map((response) => {
-                    return response.json();
-                }).subscribe(res => {
-                item.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + res.content);
-                    console.log(item.image);
-            })
-        });
-    }
 
 
     public getRoute(id: number): Item {
