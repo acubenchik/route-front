@@ -20,6 +20,8 @@ export class ItemsComponent implements OnInit {
     public ngOnInit(): void {
         this.service.loadRoutes().subscribe(res => {
             this.items = res;
+            console.log("dfdfdfdf")
+            this.service.loadImages(this.items);
         });
     }
 }
