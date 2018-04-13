@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {RouteService} from "../services/route.service";
-import {Item} from "../model/Item";
+import {Route} from "../model/Route";
 import {ImageService} from "../services/image.service";
 
 @Component({
@@ -10,15 +10,15 @@ import {ImageService} from "../services/image.service";
 })
 export class ItemsComponent implements OnInit {
 
-    private items: Item[];
+    private routes: Route[];
 
     public constructor(private routeService: RouteService, private imageService: ImageService) {
     }
 
     public ngOnInit(): void {
         this.routeService.loadRoutes().subscribe(res => {
-            this.items = res;
-            this.imageService.loadImages(this.items);
+            this.routes = res;
+            this.imageService.loadImages(this.routes);
         });
     }
 }
