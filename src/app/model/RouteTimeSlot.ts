@@ -1,6 +1,16 @@
-export class RouteTimeSlot {
-    constructor(private _id: number, private _time: string){}
+import {Guide} from "./guide";
 
+export class RouteTimeSlot {
+    constructor(private _id: number, private _time: string, private _guide: Guide) {
+    }
+
+    get guide(): Guide {
+        return this._guide;
+    }
+
+    set guide(value: Guide) {
+        this._guide = value;
+    }
 
     get id(): number {
         return this._id;

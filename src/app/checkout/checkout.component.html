@@ -3,11 +3,11 @@
         <div class="col-xs-12">
             <div class="form-wrap">
 
-                <form (ngSubmit)="onSubmit()"  id="order-form"  #f="ngForm">
+                <form (ngSubmit)="onSubmit()" id="order-form" #f="ngForm">
                     <div class="form-group">
                         <label for="formControlName">Name</label>
                         <input type="email" class="form-control" id="formControlName" name="formControlName"
-                               placeholder="John Smith" [(ngModel)]="order.name" validateName  required #name1="ngModel" >
+                               placeholder="John Smith" [(ngModel)]="order.name" validateName required #name1="ngModel">
                     </div>
 
                     <div *ngIf="name1.invalid && (name1.dirty || name1.touched)"
@@ -18,7 +18,8 @@
                     <div class="form-group">
                         <label for="formControlEmail">Email address</label>
                         <input type="email" class="form-control" id="formControlEmail" name="formControlEmail"
-                               placeholder="name@example.com"  [(ngModel)]="order.email" #email1="ngModel" [pattern]="emailPattern" required>
+                               placeholder="name@example.com" [(ngModel)]="order.email" #email1="ngModel"
+                               [pattern]="emailPattern" required>
 
                     </div>
 
@@ -31,7 +32,7 @@
                     <div class="form-group">
                         <label for="formControlPhone">Contact phone</label>
                         <textarea class="form-control" id="formControlPhone" name="formControlPhone" rows="1"
-                                  [(ngModel)]="order.phone"  #phone1="ngModel" required ></textarea>
+                                  [(ngModel)]="order.phone" #phone1="ngModel" required></textarea>
                     </div>
 
                     <div *ngIf="phone1.invalid && (phone1.dirty || phone1.touched)"
@@ -41,11 +42,19 @@
                     <div class="form-group">
                         <label for="formControlNotes">Notes</label>
                         <textarea class="form-control" id="formControlNotes" rows="3" name="formControlNotes"
-                                  [(ngModel)]="order.notes"></textarea>
+                        ></textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="formControlDate">Date</label>
+                        <textarea class="form-control" id="formControlDate" rows="1" name="formControlDate"
+                                  [readonly]="true" [value]="order.date"
+                        >
+                        </textarea>
+                    </div>
 
-                    <input type="submit" id="btn-send" class="btn btn-custom btn-lg btn-block" value="Order"  [disabled]="!f.valid">
+                    <input type="submit" id="btn-send" class="btn btn-custom btn-lg btn-block" value="Order"
+                           [disabled]="!f.valid">
                 </form>
 
             </div>

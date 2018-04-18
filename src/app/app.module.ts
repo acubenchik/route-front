@@ -11,7 +11,6 @@ import {HomeComponent} from './home/home.component';
 import '../global.scss'
 import {ItemsDetailsComponent} from "./details/items-details.component";
 import {RouteService} from "./services/route.service";
-import {SecondService} from "./route/second.service";
 import {LoginComponent} from "./login/login.component";
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth.guard";
@@ -19,6 +18,8 @@ import {CheckoutComponent} from "./checkout/checkout.component";
 import {APP_CONFIG, AppConfig} from "./common/config";
 import {NameValidator} from "./directives/name.validator";
 import {ImageService} from "./services/image.service";
+import {GuideComponent} from "./guide/guide.component";
+import {GuideResolver} from "./guide/guide.resolver";
 
 @NgModule({
     imports: [
@@ -34,14 +35,17 @@ import {ImageService} from "./services/image.service";
         LoginComponent,
         HomeComponent,
         CheckoutComponent,
-        NameValidator
+        NameValidator,
+        GuideComponent
+
     ],
     providers: [
         RouteService,
         AuthenticationService,
         AuthGuard,
         ImageService,
-        { provide: APP_CONFIG, useValue: AppConfig }
+        GuideResolver,
+        {provide: APP_CONFIG, useValue: AppConfig}
     ],
     bootstrap: [
         HomeComponent

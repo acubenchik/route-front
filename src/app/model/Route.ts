@@ -3,10 +3,17 @@ import {RouteTimeSlot} from "./RouteTimeSlot";
 
 export class Route {
 
-    constructor(private _name: string, private _image: SafeUrl,
+    constructor(private _name: string, private _image: SafeUrl, private  _description: string,
                 private _uid: number, private _availableDates: RouteTimeSlot[]) {
     }
 
+    get description(): string {
+        return this._description;
+    }
+
+    set description(value: string) {
+        this._description = value;
+    }
 
     get name(): string {
         return this._name;

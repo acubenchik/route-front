@@ -20,9 +20,13 @@ export class RouteService {
         let options: RequestOptions = new RequestOptions({headers: headers});
         return this.http.get(this.config.apiEndpoint, options).map(res => {
             this.routes = res.json()._embedded.routes;
+            console.log(res.json()._embedded.routes)
             this.routes.forEach(route => {
                 if ((<any>route)._embedded) {
                     route.availableDates = (<any>route)._embedded.routeTimeSlots;
+                    route.availableDates.forEach(timeSlot => {
+                        timeSlot.guide = (<any>timeSlot)._embedded.guides[0];
+                    });
                 }
             });
             return this.routes;

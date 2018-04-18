@@ -1,18 +1,31 @@
 <div *ngIf="item">
 
     <h2>{{ item.name | uppercase }} Details</h2>
-    <div class="list-group col-xs-12">
-        <a class="list-group-item list-group-item-action active">
-            Select available date:
-        </a>
-        <span *ngFor="let date of item.availableDates">
-            <a (click) = "selectDate(date.availableDate)" [class.disabled]="selectedDate && date.availableDate == selectedDate"
-               class="list-group-item d-flex justify-content-between align-items-center">
-                {{ date.availableDate | date: 'dd/MM/yyyy' }}
-                <span class="badge badge-primary badge-pill">Info</span>
-            </a>
-        </span>
+    <div>
+        {{item.description}}
     </div>
-    <a (click)="checkout()" class="btn btn-primary" [class.disabled]="!selectedDate">Checkout</a>
+
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-xs-4 selectdate">
+                <a class="list-group-item list-group-item-action active">
+                    Select available date:
+                </a>
+                <span *ngFor="let date of item.availableDates">
+                    <a (click)="selectDate(date.availableDate)"
+                       [class.disabled]="selectedDate && date.availableDate == selectedDate"
+                       class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ date.availableDate | date: 'dd/MM/yyyy' }}
+                        <span (click)="guideTo(date.guide.uid)" class="badge badge-primary badge-pill">Info</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <a (click)="checkout()" class="btn btn-primary btn-lg" [class.disabled]="!selectedDate">Checkout</a>
+            </div>
+        </div>
+    </div>
 
 </div>

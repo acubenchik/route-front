@@ -5,7 +5,7 @@
                 <h3 class="card-title">{{item.name}}</h3>
                 <p class="card-text">{{item.name}}</p>
                 <img [src]='item.image' class="img-thumbnail">
-                <nav>
+                <nav class="showdetails">
                     <a href="#"[routerLink]="['details',item.uid]" class="btn btn-primary">Show details</a>
                 </nav>
             </div>
