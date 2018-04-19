@@ -25,8 +25,12 @@ export class ItemsDetailsComponent implements OnInit {
 
     public ngOnInit(): void {
         let id = +this.route.snapshot.paramMap.get('id');
-        this.item = this.service.getRoute(id);
-        console.log(this.item)
+        this.service.getRoute(id).subscribe(result => {
+                this.item = result;
+            },
+            error => {
+                this.item = null;
+            });
     }
 
     public selectDate(selectedDate: string) {

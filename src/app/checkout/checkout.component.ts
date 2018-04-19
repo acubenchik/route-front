@@ -10,7 +10,6 @@ import {ActivatedRoute} from "@angular/router";
 export class CheckoutComponent implements OnInit {
 
     private order: Order;
-    emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
     public constructor(private route: ActivatedRoute, private http: Http) {
     }

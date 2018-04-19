@@ -9,21 +9,15 @@ export class AuthenticationService {
     constructor(private http: Http, private router: Router) {
     }
 
-    url: string;
-    headers: Headers;
-    options: RequestOptions;
-    creds: String;
-    updatedUser: string;
-
-    authenticate(user: User) {
-        this.url = "http://localhost:8050/auth/oauth/token";
-        this.headers = new Headers({
+    public authenticate(user: User) {
+        let url = "http://localhost:8050/auth/oauth/token";
+        let headers: Headers = new Headers({
             "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": "Basic " + btoa(user.username + ':' + user.password)
         });
-        this.options = new RequestOptions({headers: this.headers});
-        this.creds = 'grant_type=client_credentials';
-        this.http.post(this.url, this.creds, this.options)
+        let options : RequestOptions = new RequestOptions({headers: headers});
+        let creds : string = 'grant_type=client_credentials';
+        this.http.post(url, creds, options)
             .map(res => res.json()).subscribe(response => {
             localStorage.setItem('currentUser', JSON.stringify({
                 userName: user.username,
@@ -33,5 +27,12 @@ export class AuthenticationService {
         }, (error) => {
             console.log('error in', error);
         });
+    }
+
+    public getHeaders() : Headers {
+        let headers: Headers = new Headers({
+            'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('currentUser')).token
+        });
+        return headers;
     }
 }

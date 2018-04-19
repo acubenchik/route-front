@@ -1,18 +1,28 @@
-import {RouteService} from "../../services/route.service";
+import {RouteService} from "../services/route.service";
 import {inject, TestBed} from "@angular/core/testing";
 import {HttpModule, Response, ResponseOptions, XHRBackend} from "@angular/http";
 import {MockBackend} from "@angular/http/testing";
+import {AuthenticationService} from "../services/authentication.service";
+import {APP_CONFIG, AppConfig} from "../common/config";
+import {Route} from "../model/Route";
 
 describe('RouteService', () => {
 
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpModule]
-            ,
+            imports: [HttpModule],
             providers: [
                 RouteService,
-                {provide: XHRBackend, useClass: MockBackend}
+                {provide: XHRBackend, useClass: MockBackend},
+                {provide: APP_CONFIG, useValue: AppConfig},
+                {
+                    provide: AuthenticationService, useValue: {
+                    getHeaders: function () {
+                        return <any>null;
+                    }
+                }
+                }
             ]
         });
     });
@@ -54,8 +64,26 @@ describe('RouteService', () => {
             service.loadRoutes().subscribe((res: any) => {
                 },
                 (error) => {
-                    expect(error).toEqual("Server error");
+                    expect(error).toEqual("Server error Error: some error");
                 },
             );
         }));
+
+    it('should find route by id if route is present', inject([RouteService], (service: RouteService) => {
+        service.routes = [
+            <Route>{uid: 1}
+        ];
+        service.getRoute(1).subscribe(res => {
+            expect(res.uid).toBe(1);
+        })
+    }));
+
+    it('should return empty Observable if route is not present', inject([RouteService], (service: RouteService) => {
+        service.routes = [
+            <Route>{uid: 2}
+        ];
+        service.getRoute(1).subscribe(res => {
+            expect(res).toBe(null)
+        })
+    }));
 });
