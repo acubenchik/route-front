@@ -30,7 +30,6 @@ export class CheckoutComponent implements OnInit {
 
         });
         let options: RequestOptions = new RequestOptions({headers: headers});
-        console.log(JSON.stringify(this.order))
         this.http.post("http://localhost:8030/route/checkout", JSON.stringify(this.order), options)
             .subscribe(answer => {
                     console.log("SUCCESS");

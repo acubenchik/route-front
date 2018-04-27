@@ -21,10 +21,10 @@ export class RouteService {
         return this.http.get(this.config.apiEndpoint, options).map(res => {
             this._routes = res.json()._embedded.routes;
             this._routes.forEach(route => {
-                if ((<any>route)._embedded) {
-                    route.availableDates = (<any>route)._embedded.routeTimeSlots;
+                if ((route as any)._embedded) {
+                    route.availableDates = (route as any)._embedded.routeTimeSlots;
                     route.availableDates.forEach(timeSlot => {
-                        timeSlot.guide = (<any>timeSlot)._embedded.guides[0];
+                        timeSlot.guide = (timeSlot as any)._embedded.guides[0];
                     });
                 }
             });

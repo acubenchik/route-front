@@ -3,6 +3,7 @@ import {ItemsComponent} from './item/items.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import {APP_ROUTING} from './app.routing';
 
@@ -27,6 +28,7 @@ import {GuideResolver} from "./guide/guide.resolver";
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
+        HttpClientModule,
         APP_ROUTING
     ],
     declarations: [

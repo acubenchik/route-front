@@ -1,8 +1,13 @@
 import {FormControl} from '@angular/forms';
 
-export function validateName(c: FormControl): any {
-    if (c.value && c.value.startsWith("Bob")) {
-        return {valid: false};
-    }
-    return null;
+interface ValidateFunction {
+    (c: FormControl): {valid: boolean} | null;
 }
+
+export let validateName: ValidateFunction =
+    function (c: FormControl): {valid: boolean} | null {
+        if (c.value && c.value.startsWith("Bob")) {
+            return {valid: false};
+        }
+        return null;
+    };
