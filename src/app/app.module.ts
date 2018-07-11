@@ -21,6 +21,7 @@ import {NameValidator} from "./directives/name.validator";
 import {ImageService} from "./services/image.service";
 import {GuideComponent} from "./guide/guide.component";
 import {GuideResolver} from "./guide/guide.resolver";
+import {FaqComponent} from "./faq/faq.component";
 
 @NgModule({
     imports: [
@@ -32,6 +33,7 @@ import {GuideResolver} from "./guide/guide.resolver";
         APP_ROUTING
     ],
     declarations: [
+        FaqComponent,
         ItemsComponent,
         ItemsDetailsComponent,
         LoginComponent,

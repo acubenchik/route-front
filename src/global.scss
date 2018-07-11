@@ -7,8 +7,17 @@
 @import "../src/app/login/login.css";
 
 body {
-	background-color: $primary-bg;
-	color: #ffffff;
-	font-family: $primary-font;
+	background-color: #e5e2e2;
+	color: $primary-bg;
+	font-family: 'PFRegal','Georgia',serif;
 	font-size: $primary-font-size;
+}
+
+.btn-primary{
+	background-color: #5981a3;
+	border: none;
+}
+
+.text-with-spacing {
+	letter-spacing: 1px;
 }

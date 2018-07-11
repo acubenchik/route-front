@@ -7,3 +7,20 @@ h1 {
 .showdetails {
 	margin-top: 1em;
 }
+
+.showdetails > .btn-primary{
+	background-color: #5981a3;
+	border: none;
+}
+.card > .card-body{
+	border: 5px solid #B78B5C;
+	background-color: #fff;
+	text-align: center;
+	box-shadow: none;
+	font-weight: normal;
+	font-family: 'PFRegal','Georgia',serif;
+	font-size: 2em;
+}
+
+
+

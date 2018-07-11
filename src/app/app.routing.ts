@@ -8,6 +8,7 @@ import {LoginComponent} from "./login/login.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
 import {GuideComponent} from "./guide/guide.component";
 import {GuideResolver} from "./guide/guide.resolver";
+import {FaqComponent} from "./faq/faq.component";
 
 export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot([
     {
@@ -27,6 +28,11 @@ export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot([
     {
         path: 'items/checkout',
         component: CheckoutComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'faq',
+        component: FaqComponent,
         canActivate: [AuthGuard]
     },
     {

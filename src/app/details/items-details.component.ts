@@ -33,11 +33,8 @@ export class ItemsDetailsComponent implements OnInit {
             });
     }
 
-    public selectDate(selectedDate: string) {
+    public checkout(selectedDate: string): void {
         this.selectedDate = selectedDate;
-    }
-
-    public checkout(): void {
         this.router.navigate(["items/checkout"],
             {
                 queryParams: {
