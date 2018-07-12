@@ -19,12 +19,12 @@ export class RouteService {
         let headers: Headers = this.authenticationService.getHeaders();
         let options: RequestOptions = new RequestOptions({headers: headers});
         return this.http.get(this.config.apiEndpoint, options).map(res => {
-            this._routes = res.json()._embedded.routes;
+            this._routes = res.json();
             this._routes.forEach(route => {
-                if ((route as any)._embedded) {
-                    route.availableDates = (route as any)._embedded.routeTimeSlots;
+                if ((route as any).slots) {
+                    route.availableDates = (route as any).slots;
                     route.availableDates.forEach(timeSlot => {
-                        timeSlot.guide = (timeSlot as any)._embedded.guides[0];
+                        timeSlot.guide = (timeSlot as any).guide;
                     });
                 }
             });
@@ -38,7 +38,7 @@ export class RouteService {
     public getRoute(id: number): Observable<Route> {
         let result: Route = null;
         this._routes.forEach(item => {
-            if (item.uid === id) {
+            if (item.id === id) {
                 result = item;
             }
         });

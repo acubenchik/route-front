@@ -4,7 +4,7 @@ import {RouteTimeSlot} from "./RouteTimeSlot";
 export class Route {
 
     constructor(private _name: string, private _image: SafeUrl, private  _description: string,
-                private _uid: number, private _availableDates: RouteTimeSlot[]) {
+                private _id: number, private _availableDates: RouteTimeSlot[]) {
     }
 
     get description(): string {
@@ -31,12 +31,12 @@ export class Route {
         this._image = value;
     }
 
-    get uid(): number {
-        return this._uid;
+    get id(): number {
+        return this._id;
     }
 
-    set uid(value: number) {
-        this._uid = value;
+    set id(value: number) {
+        this._id = value;
     }
 
     get availableDates(): RouteTimeSlot[] {

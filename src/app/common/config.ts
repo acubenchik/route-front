@@ -9,7 +9,7 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-    apiEndpoint: "http://localhost:8030/route/get/all",
-    guideEndpoint: "http://localhost:8030/guide",
+    apiEndpoint: "http://localhost:8030/route/get",
+    guideEndpoint: "http://localhost:8030/guide/get",
     imageEndpoint: "http://localhost:8030/image/get"
 };

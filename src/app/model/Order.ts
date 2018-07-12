@@ -1,57 +1,57 @@
 export class Order {
-    private _name: string;
-    private _routeId: string;
-    private _email: string;
-    private _phone: string;
-    private _date: string;
-    private _notes: string;
+    private name: string;
+    private routeId: string;
+    private email: string;
+    private phone: string;
+    private date: string;
+    private notes: string;
 
 
-    get routeId(): string {
-        return this._routeId;
+    get getRouteId(): string {
+        return this.routeId;
     }
 
-    set routeId(value: string) {
-        this._routeId = value;
+    set setRouteId(value: string) {
+        this.routeId = value;
     }
 
-    get date(): string {
-        return this._date;
+    get getDate(): string {
+        return this.date;
     }
 
-    set date(value: string) {
-        this._date = value;
+    set setDate(value: string) {
+        this.date = value;
     }
 
-    get phone(): string {
-        return this._phone;
+    get getPhone(): string {
+        return this.phone;
     }
 
-    set phone(value: string) {
-        this._phone = value;
+    set setPhone(value: string) {
+        this.phone = value;
     }
 
-    get notes(): string {
-        return this._notes;
+    get getNotes(): string {
+        return this.notes;
     }
 
-    set notes(value: string) {
-        this._notes = value;
+    set setNotes(value: string) {
+        this.notes = value;
     }
 
-    get email(): string {
-        return this._email;
+    get getEmail(): string {
+        return this.email;
     }
 
-    set email(value: string) {
-        this._email = value;
+    set setEmail(value: string) {
+        this.email = value;
     }
 
-    get name(): string {
-        return this._name;
+    get getName(): string {
+        return this.name;
     }
 
-    set name(value: string) {
-        this._name = value;
+    set setName(value: string) {
+        this.name = value;
     }
 }

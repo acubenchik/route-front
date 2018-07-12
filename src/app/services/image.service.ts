@@ -18,7 +18,7 @@ export class ImageService {
     public loadImages(routes: Route[]): void {
         routes.forEach(item => {
             let options: any = {observe: 'response'};
-            let entity: CachedImageEntity = this.etags[item.uid];
+            let entity: CachedImageEntity = this.etags[item.id];
             if (entity) {
                 let eTag: string = entity.eTag;
                 if (eTag) {
@@ -28,13 +28,17 @@ export class ImageService {
                     options['headers'] = headers;
                 }
             }
-            this.http.get(this.config.imageEndpoint + "/" + item.uid, options)
+
+            console.log(this.config.imageEndpoint)
+            this.http.get(this.config.imageEndpoint + "/" + item.id, options)
                 .subscribe((res: any) => {
+                console.log(res);
                     item.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + (<any>res.body).content);
-                    this.etags[item.uid] = new CachedImageEntity(item.image, res.headers.get("ETag"));
+                    this.etags[item.id] = new CachedImageEntity(item.image, res.headers.get("ETag"));
                 }, error => {
+                console.log(error)
                     if (error.status == 304) {
-                        item.image = this.etags[item.uid].image;
+                        item.image = this.etags[item.id].image;
                     }
                 })
         });

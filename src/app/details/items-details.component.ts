@@ -45,6 +45,6 @@ export class ItemsDetailsComponent implements OnInit {
     }
 
     public guideTo(guideId: string): void {
-        this.router.navigate(["guide/info"], {queryParams: {id: guideId, routeId: this.item.uid}});
+        this.router.navigate(["guide/info"], {queryParams: {id: guideId, routeId: this.item.id}});
     }
 }
