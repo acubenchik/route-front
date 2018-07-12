@@ -1,0 +1,52 @@
+<trans-unit id="about" datatype="html">
+    <source>About us</source>
+    <target>О нас</target>
+</trans-unit>
+<trans-unit id="mainPage" datatype="html">
+    <target>На главную</target>
+</trans-unit>
+<trans-unit id="faq" datatype="html">
+    <target>Вопросы</target>
+</trans-unit>
+<trans-unit id="details" datatype="html">
+    <target>Детали</target>
+</trans-unit>
+<trans-unit id="start" datatype="html">
+    <target>Начало</target>
+</trans-unit>
+<trans-unit id="finish" datatype="html">
+    <target>Конец</target>
+</trans-unit>
+<trans-unit id="description" datatype="html">
+    <target>Описание</target>
+</trans-unit>
+<trans-unit id="price" datatype="html">
+    <target>Цена</target>
+</trans-unit>
+<trans-unit id="days" datatype="html">
+    <target>Длительность</target>
+</trans-unit>
+<trans-unit id="guide" datatype="html">
+    <target>Гид</target>
+</trans-unit>
+<trans-unit id="book" datatype="html">
+    <target>Забронировать!</target>
+</trans-unit>
+<trans-unit id="notes" datatype="html">
+    <target>Заметки</target>
+</trans-unit>
+<trans-unit id="contacts" datatype="html">
+    <target>Контакты(телефон, фб профиль..)</target>
+</trans-unit>
+<trans-unit id="email" datatype="html">
+    <target>Почта(обязательно!)</target>
+</trans-unit>
+<trans-unit id="name" datatype="html">
+    <target>Имя(обязательно!)</target>
+</trans-unit>
+<trans-unit id="nameFill" datatype="html">
+    <target>Пожалуйста, заполните поле</target>
+</trans-unit>
+<trans-unit id="emailFill" datatype="html">
+<target>Пожалуйста, заполните поле</target>
+</trans-unit>

@@ -28,11 +28,10 @@ export class ImageService {
                     options['headers'] = headers;
                 }
             }
-
-            console.log(this.config.imageEndpoint)
+            console.log(item.id);
             this.http.get(this.config.imageEndpoint + "/" + item.id, options)
                 .subscribe((res: any) => {
-                console.log(res);
+
                     item.image = this.sanitizer.bypassSecurityTrustUrl(this.imageType + (<any>res.body).content);
                     this.etags[item.id] = new CachedImageEntity(item.image, res.headers.get("ETag"));
                 }, error => {

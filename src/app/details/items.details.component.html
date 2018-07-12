@@ -8,12 +8,12 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Start</th>
-                <th scope="col">Finish</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
-                <th scope="col">Days</th>
-                <th scope="col">Guide</th>
+                <th scope="col" i18n="@@start">Start</th>
+                <th scope="col" i18n="@@finish">Finish</th>
+                <!--<th scope="col" i18n="@@description">Description</th>-->
+                <th scope="col" i18n="@@price">Price</th>
+                <th scope="col" i18n="@@days">Days</th>
+                <th scope="col" i18n="@@guide">Guide</th>
                 <th scope="col"></th>
             </tr>
             </thead>
@@ -22,12 +22,15 @@
                 <td class="d-flex justify-content-between align-items-center">{{ date.availableDate |
                     date: 'dd/MM/yyyy' }}
                 </td>
-                <td>42</td>
-                <td>42</td>
-                <td>42</td>
+                <td>{{ date.endDate |
+                    date: 'dd/MM/yyyy' }}
+                </td>
+                <!--<td>{{item.description}}</td>-->
+                <td>{{item.price}}</td>
                 <td>42</td>
                 <td><a (click)="guideTo(date.guide.id)" class="btn btn-primary btn-sm">{{date.guide.name}}</a></td>
-                <td><a (click)="checkout(date.availableDate)" class="btn btn-primary btn-sm">Book!</a></td>
+                <td><a (click)="checkout(date.availableDate)" class="btn btn-primary btn-sm" i18n="@@book">Book!</a>
+                </td>
             </tr>
             <!--<tr>-->
             <!--<th scope="row">1</th>-->

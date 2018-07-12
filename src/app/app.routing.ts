@@ -21,10 +21,10 @@ export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot([
         component: ItemsDetailsComponent,
         canActivate: [AuthGuard]
     },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
+    // {
+    //     path: 'login',
+    //     component: LoginComponent
+    // },
     {
         path: 'items/checkout',
         component: CheckoutComponent,
@@ -43,6 +43,6 @@ export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot([
             crisis: GuideResolver
         }
     },
-    {path: '', redirectTo: "login", pathMatch: 'full'},
+    {path: '', redirectTo: "items", pathMatch: 'full'},
 
 ], );

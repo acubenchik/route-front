@@ -5,18 +5,18 @@
 
                 <form (ngSubmit)="onSubmit()" id="order-form" #f="ngForm">
                     <div class="form-group">
-                        <label for="formControlName">Name</label>
+                        <label for="formControlName" i18n="@@name">Name</label>
                         <input type="email" class="form-control" id="formControlName" name="formControlName"
                                placeholder="John Smith" [(ngModel)]="order.name" validateName required #name1="ngModel">
                     </div>
 
                     <div *ngIf="name1.invalid && (name1.dirty || name1.touched)"
-                         class="alert alert-danger">
+                         class="alert alert-danger" i18n="@@nameFill">
                         Please fill the name field
                     </div>
 
                     <div class="form-group">
-                        <label for="formControlEmail">Email address</label>
+                        <label for="formControlEmail" i18n="@@email">Email address</label>
                         <input type="email" class="form-control" id="formControlEmail" name="formControlEmail"
                                placeholder="name@example.com" [(ngModel)]="order.email" #email1="ngModel"
                                [pattern]="emailPattern" required>
@@ -25,28 +25,24 @@
 
 
                     <div *ngIf="email1.invalid && (email1.dirty || email1.touched)"
-                         class="alert alert-danger">
+                         class="alert alert-danger" i18n="@@emailFill">
                         Please fill the email field
                     </div>
 
                     <div class="form-group">
-                        <label for="formControlPhone">Contact phone</label>
+                        <label for="formControlPhone" i18n="@@contacts">Contact phone</label>
                         <textarea class="form-control" id="formControlPhone" name="formControlPhone" rows="1"
-                                  [(ngModel)]="order.phone" #phone1="ngModel" required></textarea>
+                                  [(ngModel)]="order.phone" #phone1="ngModel"></textarea>
                     </div>
 
-                    <div *ngIf="phone1.invalid && (phone1.dirty || phone1.touched)"
-                         class="alert alert-danger">
-                        Please fill the name field
-                    </div>
                     <div class="form-group">
-                        <label for="formControlNotes">Notes</label>
+                        <label for="formControlNotes" i18n="@@notes">Notes</label>
                         <textarea class="form-control" id="formControlNotes" rows="3" name="formControlNotes"  [(ngModel)]="order.notes"
                         ></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="formControlDate">Date</label>
+                        <label for="formControlDate" i18n="@@start">Start Date</label>
                         <textarea class="form-control" id="formControlDate" rows="1" name="formControlDate"
                                   [readonly]="true" [value]="order.date"
                         >

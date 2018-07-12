@@ -16,9 +16,9 @@ export class RouteService {
     }
 
     public loadRoutes(): Observable<Route[]> {
-        let headers: Headers = this.authenticationService.getHeaders();
-        let options: RequestOptions = new RequestOptions({headers: headers});
-        return this.http.get(this.config.apiEndpoint, options).map(res => {
+        // let headers: Headers = this.authenticationService.getHeaders();
+        // let options: RequestOptions = new RequestOptions({headers: headers});
+        return this.http.get(this.config.apiEndpoint).map(res => {
             this._routes = res.json();
             this._routes.forEach(route => {
                 if ((route as any).slots) {

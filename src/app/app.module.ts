@@ -12,7 +12,7 @@ import {HomeComponent} from './home/home.component';
 import '../global.scss'
 import {ItemsDetailsComponent} from "./details/items-details.component";
 import {RouteService} from "./services/route.service";
-import {LoginComponent} from "./login/login.component";
+// import {LoginComponent} from "./login/login.component";
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth.guard";
 import {CheckoutComponent} from "./checkout/checkout.component";
@@ -36,7 +36,7 @@ import {FaqComponent} from "./faq/faq.component";
         FaqComponent,
         ItemsComponent,
         ItemsDetailsComponent,
-        LoginComponent,
+        // LoginComponent,
         HomeComponent,
         CheckoutComponent,
         NameValidator,
