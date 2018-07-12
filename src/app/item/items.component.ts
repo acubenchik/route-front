@@ -18,6 +18,8 @@ export class ItemsComponent implements OnInit {
     public ngOnInit(): void {
         this.routeService.loadRoutes().subscribe(res => {
             this.routes = res;
+            console.log(res)
+            console.log(this.routes)
             this.imageService.loadImages(this.routes);
         });
     }
