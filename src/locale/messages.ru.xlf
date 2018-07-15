@@ -50,3 +50,6 @@
 <trans-unit id="emailFill" datatype="html">
 <target>Пожалуйста, заполните поле</target>
 </trans-unit>
+<trans-unit id="priceTitle" datatype="html">
+<target>Цена</target>
+</trans-unit>

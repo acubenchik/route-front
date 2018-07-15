@@ -28,7 +28,7 @@
                 <!--<td>{{item.description}}</td>-->
                 <td>{{item.price}}</td>
                 <td>{{item.length}}</td>
-                <td><a (click)="guideTo(date.guide.id)" class="btn btn-primary btn-sm">{{date.guide.name}}</a></td>
+                <td><a [routerLink]="['/about']"class="btn btn-primary btn-sm">{{date.guide.name}}</a></td>
                 <td><a (click)="checkout(date.availableDate)" class="btn btn-primary btn-sm" i18n="@@book">Book!</a>
                 </td>
             </tr>

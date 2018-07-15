@@ -22,6 +22,7 @@ import {ImageService} from "./services/image.service";
 import {GuideComponent} from "./guide/guide.component";
 import {GuideResolver} from "./guide/guide.resolver";
 import {FaqComponent} from "./faq/faq.component";
+import {AboutComponent} from "./about/about.component";
 
 @NgModule({
     imports: [
@@ -33,6 +34,7 @@ import {FaqComponent} from "./faq/faq.component";
         APP_ROUTING
     ],
     declarations: [
+        AboutComponent,
         FaqComponent,
         ItemsComponent,
         ItemsDetailsComponent,
