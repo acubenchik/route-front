@@ -13,3 +13,9 @@ export const AppConfig: IAppConfig = {
     guideEndpoint: "http://localhost:8030/guide/get",
     imageEndpoint: "http://localhost:8030/image/get"
 };
+
+export const ProdAppConfig: IAppConfig = {
+    apiEndpoint: "http://cryptic-springs-65982.herokuapp.com/route/get",
+    guideEndpoint: "http://cryptic-springs-65982.herokuapp.com/guide/get",
+    imageEndpoint: "http://cryptic-springs-65982.herokuapp.com/image/get"
+};

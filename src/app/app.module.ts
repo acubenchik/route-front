@@ -16,7 +16,7 @@ import {RouteService} from "./services/route.service";
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth.guard";
 import {CheckoutComponent} from "./checkout/checkout.component";
-import {APP_CONFIG, AppConfig} from "./common/config";
+import {APP_CONFIG, AppConfig, ProdAppConfig} from "./common/config";
 import {NameValidator} from "./directives/name.validator";
 import {ImageService} from "./services/image.service";
 import {GuideComponent} from "./guide/guide.component";
@@ -53,7 +53,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
         AuthGuard,
         ImageService,
         GuideResolver,
-        {provide: APP_CONFIG, useValue: AppConfig}
+        {provide: APP_CONFIG, useValue: ProdAppConfig}
     ],
     bootstrap: [
         HomeComponent
