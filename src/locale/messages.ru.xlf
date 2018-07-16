@@ -1,6 +1,6 @@
 <trans-unit id="about" datatype="html">
     <source>About us</source>
-    <target>О нас</target>
+    <target>Обо мне</target>
 </trans-unit>
 <trans-unit id="mainPage" datatype="html">
     <target>На главную</target>
