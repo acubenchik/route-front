@@ -1,7 +1,7 @@
 const liveServer = require("live-server");
 
 const params = {
-    port: 8181,
+    port: process.env.PORT || 8181,
     root: 'dist',
     open: false,
     ignore: 'scss,my/templates',
