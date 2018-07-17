@@ -53,6 +53,9 @@
 <trans-unit id="priceTitle" datatype="html">
 <target>Цена</target>
 </trans-unit>
-<trans-unit id="aboutMeText" datatype="html">
-<target>Скоро...</target>
+<trans-unit id="chooseATour" datatype="html">
+<target>Хочу в поход!</target>
+</trans-unit>
+<trans-unit id="orAbout" datatype="html">
+<target>Или</target>
 </trans-unit>

@@ -48,6 +48,6 @@ export const APP_ROUTING: ModuleWithProviders = RouterModule.forRoot([
             crisis: GuideResolver
         }
     },
-    {path: '', redirectTo: "items", pathMatch: 'full'},
+    {path: '', redirectTo: "about", pathMatch: 'full'},
 
 ], );

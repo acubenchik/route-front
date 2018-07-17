@@ -4,7 +4,8 @@ import {AnimationConfig, ICarouselConfig} from 'angular4-carousel';
 
 @Component({
     selector: "about",
-    templateUrl: './about.component.html'
+    templateUrl: './about.component.html',
+    styleUrls: [ "./about.component.scss" ]
 })
 export class AboutComponent implements OnInit {
 
