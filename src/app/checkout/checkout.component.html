@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label for="formControlDate" i18n="@@start">Start Date</label>
                         <textarea class="form-control" id="formControlDate" rows="1" name="formControlDate"
-                                  [readonly]="true" [value]="order.date"
+                                  [readonly]="true" [value]="order.date | date: 'dd/MM/yyyy'"
                         >
                         </textarea>
                     </div>
