@@ -12,11 +12,11 @@ import {HomeComponent} from './home/home.component';
 import '../global.scss'
 import {ItemsDetailsComponent} from "./details/items-details.component";
 import {RouteService} from "./services/route.service";
-// import {LoginComponent} from "./login/login.component";
+import {CarouselModule} from 'angular4-carousel';
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth.guard";
 import {CheckoutComponent} from "./checkout/checkout.component";
-import {APP_CONFIG, AppConfig, ProdAppConfig} from "./common/config";
+import {APP_CONFIG, ProdAppConfig} from "./common/config";
 import {NameValidator} from "./directives/name.validator";
 import {ImageService} from "./services/image.service";
 import {GuideComponent} from "./guide/guide.component";
@@ -24,9 +24,12 @@ import {GuideResolver} from "./guide/guide.resolver";
 import {FaqComponent} from "./faq/faq.component";
 import {AboutComponent} from "./about/about.component";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {InstaService} from "./about/insta.service";
+import {CheckoutService} from "./checkout/checkout.service";
 
 @NgModule({
     imports: [
+        CarouselModule,
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
@@ -48,6 +51,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
     ],
     providers: [
+        CheckoutService,
+        InstaService,
         RouteService,
         AuthenticationService,
         AuthGuard,

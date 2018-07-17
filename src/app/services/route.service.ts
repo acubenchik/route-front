@@ -1,5 +1,5 @@
 import {Inject, Injectable} from "@angular/core";
-import {Headers, Http, RequestOptions} from "@angular/http";
+import {Http} from "@angular/http";
 import {Route} from "../model/Route";
 import {Observable} from "rxjs/Observable";
 import {APP_CONFIG, IAppConfig} from "../common/config"
@@ -16,8 +16,6 @@ export class RouteService {
     }
 
     public loadRoutes(): Observable<Route[]> {
-        // let headers: Headers = this.authenticationService.getHeaders();
-        // let options: RequestOptions = new RequestOptions({headers: headers});
         return this.http.get(this.config.apiEndpoint).map(res => {
             this._routes = res.json();
             this._routes.forEach(route => {

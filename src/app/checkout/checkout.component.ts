@@ -1,7 +1,8 @@
 import {Component, OnInit} from "@angular/core";
-import {Headers, Http, RequestOptions} from "@angular/http";
+import {Headers, RequestOptions} from "@angular/http";
 import {Order} from "../model/Order";
 import {ActivatedRoute, Router} from "@angular/router";
+import {CheckoutService} from "./checkout.service";
 
 @Component({
     selector: "items",
@@ -12,8 +13,8 @@ export class CheckoutComponent implements OnInit {
     private order: Order;
 
     public constructor(private route: ActivatedRoute,
-                       private http: Http,
-                       private router: Router) {
+                       private router: Router,
+                       private checkoutService: CheckoutService) {
     }
 
     public ngOnInit(): void {
@@ -29,13 +30,11 @@ export class CheckoutComponent implements OnInit {
             'Content-Type': 'application/json'
 
         });
-        console.log(this.order);
         let options: RequestOptions = new RequestOptions({headers: headers});
-        this.http.post("http://localhost:8030/checkout", JSON.stringify(this.order), options)
+        this.checkoutService.checkout(this.order, options)
             .subscribe(answer => {
                     this.router.navigate(['/items']);
                 }, error2 => {
-                    console.log("ERROR");
                     //TODO: react somehow
                 }
             );

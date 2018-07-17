@@ -53,3 +53,6 @@
 <trans-unit id="priceTitle" datatype="html">
 <target>Цена</target>
 </trans-unit>
+<trans-unit id="aboutMeText" datatype="html">
+<target>Скоро...</target>
+</trans-unit>

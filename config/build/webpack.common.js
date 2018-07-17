@@ -33,7 +33,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                exclude: [/node_modules/, helpers.root('src', 'global.scss')],
+                exclude: [helpers.root('src', 'global.scss')],
                 use: ['to-string-loader', 'css-loader', 'sass-loader']
             },
             {
