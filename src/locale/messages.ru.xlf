@@ -59,3 +59,6 @@
 <trans-unit id="orAbout" datatype="html">
 <target>Или</target>
 </trans-unit>
+<trans-unit id="title" datatype="html">
+<target>На перевалах</target>
+</trans-unit>
