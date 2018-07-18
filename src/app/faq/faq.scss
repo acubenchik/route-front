@@ -17,3 +17,28 @@
   margin: 0 auto 15px;
   text-align: center;
 }
+
+.cardContent{
+  max-width: 75%;
+  float: right;
+}
+
+
+@media only screen and (max-width: 768px){
+  .col-lg-3 {
+    visibility: hidden;
+  }
+  .cardContent{
+    max-width: 100%;
+    float: none;
+  }
+
+}
+
+.menuLink {
+  color : black;
+  font-family: 'Proxima Nova','Arial','Helvetica Neue',sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+}

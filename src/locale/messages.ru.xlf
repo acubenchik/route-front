@@ -62,3 +62,6 @@
 <trans-unit id="title" datatype="html">
 <target>На перевалах</target>
 </trans-unit>
+<trans-unit id="meetingTitle" datatype="html">
+<target>Доезд</target>
+</trans-unit>

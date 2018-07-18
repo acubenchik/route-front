@@ -1,22 +1,20 @@
 <div class="container">
-    <div class="card">
-        <div class="card-body">
-            This is some text within a card body.
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                This is some text within a card body.
+            </div>
         </div>
     </div>
-    <div class="card-deck-wrapper">
-        <div class="card-deck">
-            <div *ngFor="let item of routes;" class="card">
-                <div class="card-block">
-                    <h3 class="card-title">{{item.name}}</h3>
-                    <p class="card-text text-with-spacing">{{item.name}}</p>
-                    <img [src]='item.image' class="img-thumbnail rounded">
-                    <nav class="showdetails">
-                        <a href="#" [routerLink]="['details',item.id]" class="btn btn-primary" i18n="@@details">Show
-                            details</a>
-                    </nav>
-                </div>
-            </div>
+    <div class="row">
+        <div *ngFor="let item of routes" class="col-6 col-md-4">
+            <h3 class="card-title">{{item.name}}</h3>
+            <p class="card-text text-with-spacing">{{item.name}}</p>
+            <img [src]='item.image' class="img-thumbnail rounded">
+            <nav class="showdetails">
+                <a href="#" [routerLink]="['details',item.id]" class="btn btn-primary" i18n="@@details">Show
+                    details</a>
+            </nav>
         </div>
     </div>
 </div>

@@ -9,3 +9,19 @@
 .orWantToGo {
   font-size:2em;
 }
+
+.instaCarousel{
+  width: 500px;
+  height: 500px
+}
+
+
+@media only screen and (max-width: 768px){
+  .instaaFeed{
+    visibility: hidden;
+  }
+
+  .aboutContent{
+    width: 100%;
+  }
+}
