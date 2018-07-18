@@ -2,3 +2,19 @@
   margin-bottom: 2em;
   top: 1em;
 }
+
+@media only screen and (max-width: 768px){
+  .detailsInfo {
+    border: none;
+    display: grid;
+  }
+  .tableBody {
+    border: none;
+    display: -webkit-box;
+  }
+
+  .borderless td, .borderless th {
+    border: none;
+  }
+}
+
