@@ -28,14 +28,13 @@ div.plumHome {
 
 @media only screen and (max-width: 768px){
   .aboutSection {
-    float: left;
+    float: none;
     margin-left:0;
     margin-right:1em;
     display: inline-flex;
   }
   .aboutIcon {
-    margin-right: 0em;
-    margin-top: 0.5em;
+    margin: 0.5em;
   }
   .navbar-nav{
     margin-bottom:0;
