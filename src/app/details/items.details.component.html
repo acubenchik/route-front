@@ -1,8 +1,14 @@
 <div *ngIf="item" class="container">
 
-    <h2>{{ item.name | uppercase }} Details</h2>
-    <div class="text-with-spacing">
-        {{item.description}}
+    <h2>{{ item.name | uppercase }}</h2>
+    <p class="aboutCentered">
+    <button class="btn btn-lg btn-success" type="button" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" data-toggle="collapse" data-target="#collapseDescription"
+            aria-expanded="false" aria-controls="collapseDescription">
+        Наш маршрут по дням
+    </button>
+    </p>
+    <div class="text-with-spacing" [innerHTML]="item.description" id="collapseDescription" [ngbCollapse]="isCollapsed">
     </div>
     <div class="col-lg-12">
         <div class="table-responsive">

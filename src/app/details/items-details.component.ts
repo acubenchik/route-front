@@ -17,10 +17,12 @@ export class ItemsDetailsComponent implements OnInit {
 
     private selectedDate: string;
 
+    isCollapsed: Boolean;
     public constructor(private route: ActivatedRoute,
                        private router: Router,
                        private service: RouteService,
                        private http: Http) {
+        this.isCollapsed = false;
     }
 
     public ngOnInit(): void {

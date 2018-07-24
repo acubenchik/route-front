@@ -17,7 +17,7 @@ import {CarouselModule} from 'angular4-carousel';
 import {AuthenticationService} from "./services/authentication.service";
 import {AuthGuard} from "./services/auth.guard";
 import {CheckoutComponent} from "./checkout/checkout.component";
-import {APP_CONFIG, ProdAppConfig} from "./common/config";
+import {APP_CONFIG, AppConfig, ProdAppConfig} from "./common/config";
 import {NameValidator} from "./directives/name.validator";
 import {ImageService} from "./services/image.service";
 import {GuideComponent} from "./guide/guide.component";
